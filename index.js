@@ -4,9 +4,11 @@ const port = process.env.PORT || 9000
 
 const io  = new Server(port, {
     cors:{
-        origin:'http://localhost:5173/',
+        origin:'http://localhost:5173',
         methods:['GET', 'POST']
     }
 })
 
-io.on('connection', {})
+io.on('connection', socket=>{
+    console.log('connected')
+})
