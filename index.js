@@ -1,5 +1,9 @@
 import { Server } from "socket.io";
 
+import Connection from "./database/db.js";
+
+Connection()
+
 const port = process.env.PORT || 9000
 
 const io = new Server(port, {

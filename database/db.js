@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 // name = LikhoDoc
 
 const Connection = async () => {
-    const URL = `mongodb+srv://LikhoDoc:${process.env.DB_PASS}@cluster0.t0uxhcf.mongodb.net/?retryWrites=true&w=majority`
+    const URL = `mongodb+srv://LikhoDoc:coK9IJ0RxlvXHII9@cluster0.t0uxhcf.mongodb.net/?retryWrites=true&w=majority`
 
     try {
         await mongoose.connect(URL, {useUnifiedTopology: true, useNewUrlParser: true })
