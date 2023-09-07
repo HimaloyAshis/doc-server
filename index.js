@@ -17,9 +17,9 @@ const io = new Server(port, {
 
 io.on('connection', socket => {
 
-    socket.on('get-document', documentId => {
+    socket.on('get-document', async documentId => {
 
-        const document = getDocument(documentId)
+        const document = await getDocument(documentId)
         socket.join(documentId)
         socket.emit('load-document', document.data)
 

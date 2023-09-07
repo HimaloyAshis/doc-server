@@ -11,5 +11,6 @@ export const getDocument = async (id)=>{
 }
 
 export const updateDocument = async (id , data)=>{
+    // return await Document.findByIdAndUpdate(id, {data})
     return await Document.findByIdAndUpdate(id, {data})
 }
