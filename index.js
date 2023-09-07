@@ -28,6 +28,10 @@ io.on('connection', socket => {
 
         })
 
+        socket.on('save-document', async data =>{
+            return await updateDocument( documentId , data)
+        })
+
     })
 
 
