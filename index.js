@@ -2,6 +2,8 @@ import { Server } from "socket.io";
 
 import Connection from "./database/db.js";
 
+import { getDocument, updateDocument } from "./controller/document-controller.js";
+
 Connection()
 
 const port = process.env.PORT || 9000
@@ -17,9 +19,9 @@ io.on('connection', socket => {
 
     socket.on('get-document', documentId => {
 
-        const data = ""
+        const document = getDocument(documentId)
         socket.join(documentId)
-        socket.emit('load-document', data)
+        socket.emit('load-document', document.data)
 
         socket.on('send-changes', delta => {
             socket.broadcast.to(documentId).emit('receive-changes', delta)
